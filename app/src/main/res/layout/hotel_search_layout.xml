@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_layout">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/hotel_search_inner_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <TextView
+                android:id="@+id/title_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Welcome to Hotel Reservation System"
+                android:textSize="24sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/check_in_date_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Check In Date"
+                android:gravity="start"
+                app:layout_constraintTop_toBottomOf="@+id/title_text_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="32dp"/>
+
+            <DatePicker
+                android:id="@+id/check_in_date_picker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/check_in_date_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:datePickerMode="calendar" />
+
+            <TextView
+                android:id="@+id/check_out_date_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Check Out Date"
+                android:gravity="start"
+                app:layout_constraintTop_toBottomOf="@+id/check_in_date_picker"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"/>
+
+            <DatePicker
+                android:id="@+id/check_out_date_picker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/check_out_date_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:datePickerMode="calendar" />
+
+            <TextView
+                android:id="@+id/number_of_guests_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Number of Guests"
+                android:gravity="start"
+                app:layout_constraintTop_toBottomOf="@+id/check_out_date_picker"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"/>
+
+            <EditText
+                android:id="@+id/number_of_guests_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                app:layout_constraintTop_toBottomOf="@+id/number_of_guests_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:id="@+id/name_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Name"
+                android:gravity="start"
+                app:layout_constraintTop_toBottomOf="@+id/number_of_guests_edit_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"/>
+
+            <EditText
+                android:id="@+id/name_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/name_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"/>
+
+            <Button
+                android:id="@+id/search_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                app:layout_constraintTop_toBottomOf="@id/name_edit_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="35dp"/>
+
+            <Button
+                android:id="@+id/save_search_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Save Search"
+                app:layout_constraintTop_toBottomOf="@id/search_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/middle_guideline"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="35dp"/>
+
+            <Button
+                android:id="@+id/retrieve_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Retrieve Search"
+                app:layout_constraintTop_toBottomOf="@id/search_button"
+                app:layout_constraintStart_toEndOf="@id/middle_guideline"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="35dp"/>
+
+            <Button
+                android:id="@+id/clear_search_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Clear Search"
+                app:layout_constraintTop_toBottomOf="@id/retrieve_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="35dp"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/middle_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
